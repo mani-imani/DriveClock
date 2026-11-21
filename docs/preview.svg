@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="600" viewBox="0 0 1024 600">
+  <rect width="1024" height="600" fill="#000"/>
+  <g text-anchor="middle" direction="rtl" font-family="Vazirmatn, Tahoma, 'Segoe UI', sans-serif">
+    <text x="512" y="335" font-size="230" font-weight="900" fill="#ececee">۲۲:۴۰</text>
+    <text x="512" y="400" font-size="34" fill="#8e8e96">پنجشنبه ۲۸ آبان ۱۴۰۵</text>
+    <text x="512" y="448" font-size="25" fill="#60606a">۴۲ دقیقه رانندگی</text>
+  </g>
+</svg>

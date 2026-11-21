@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <application
+        android:label="DriveClock"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher"
+        android:theme="@style/Theme.DriveClock"
+        android:supportsRtl="true">
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|keyboardHidden|uiMode">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".ShowService"
+            android:exported="false" />
+
+        <!-- ignition off/on: the vendor wake-up broadcasts reach even force-stopped apps -->
+        <receiver
+            android:name=".SleepReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.car.action.ENTER_SLEEP" />
+                <action android:name="android.car.action.EXIT_SLEEP" />
+                <action android:name="android.car.action.CAR_BOOT_COMPLETED" />
+                <action android:name="android.car.action.CAR_APP_INIT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>
